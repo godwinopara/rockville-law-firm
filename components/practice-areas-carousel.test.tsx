@@ -11,4 +11,6 @@ test("practice areas carousel exposes every service and its destination", () => 
   assert.match(html, /href="\/services\/company-secretary-compliance"/);
   assert.match(html, /aria-label="Previous practice areas"/);
   assert.match(html, /aria-label="Next practice areas"/);
+  assert.match(html, /role="group" aria-label="Practice area carousel controls"/);
+  assert.match(html, /role="region" aria-label="Rockville LP practice areas"/);
 });
