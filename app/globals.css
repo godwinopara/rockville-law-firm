@@ -3,7 +3,7 @@
 :root {
   --paper: #f9f9f9;
   --ink: #121212;
-  --brand-blue: #294a73;
+  --brand-blue: #2b3f61;
   --brand-blue-light: #7ea6c4;
   --stone: #706f68;
   --line: #deddd7;
@@ -40,7 +40,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .bg-ink .brand-rule::before { background: var(--brand-blue-light); }
 .btn-primary, .btn-outline { display: inline-flex; min-height: 3.35rem; align-items: center; justify-content: center; gap: 1.4rem; padding: .85rem 1.25rem; font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; transition: background-color .3s ease, color .3s ease, border-color .3s ease; }
 .btn-primary { background: var(--brand-blue); color: var(--paper); }
-.btn-primary:hover { background: #3c618d; }
+.btn-primary:hover { background: #3d557b; }
 .btn-outline { border: 1px solid currentColor; }
 .btn-outline:hover { background: var(--ink); color: var(--paper); }
 .text-link { display: inline-flex; align-items: center; gap: .75rem; border-bottom: 1px solid currentColor; padding-bottom: .35rem; font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }

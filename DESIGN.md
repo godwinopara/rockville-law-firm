@@ -5,7 +5,7 @@ description: "A premium international law-firm website built around obsidian con
 colors:
   paper: "#F9F9F9"
   ink: "#121212"
-  brand-blue: "#294A73"
+  brand-blue: "#2B3F61"
   brand-blue-light: "#7EA6C4"
   stone: "#706F68"
   line: "#DEDDD7"
