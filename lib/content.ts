@@ -137,6 +137,29 @@ export function getRelatedPracticeAreas(slug: string, count = 3) {
 }
 
 export const coreValues = ["Professionalism", "Respect", "Efficiency", "Practicality", "Sincerity"];
+
+export const processSteps = [
+  { number: "01", title: "Initial consultation", body: "We begin by listening carefully, reviewing the matter, and understanding the outcome you need to work toward." },
+  { number: "02", title: "Matter assessment", body: "We consider the facts, documents, relevant legal framework, and practical context to clarify the position." },
+  { number: "03", title: "Tailored strategy", body: "We identify clear options and develop a considered approach shaped around the matter and your priorities." },
+  { number: "04", title: "Representation & resolution", body: "We provide focused guidance and representation through negotiation, alternative dispute resolution, or litigation where required." },
+] as const;
+
+export const teamMembers = [
+  { name: "Rufus C. Okoli", role: "Founder & Principal Partner", summary: "An experienced legal practitioner with a practice spanning advocacy, commercial planning, negotiation, real estate, corporate, commercial, and maritime law." },
+  { name: "Ngozi R. Okoli", role: "Partner", summary: "A seasoned legal practitioner whose work includes corporate and commercial law, intellectual property, property law, and company secretarial practice." },
+  { name: "Dr. Nosike Agokei", role: "Consultant", summary: "A solicitor and advocate of the Supreme Court of Nigeria with experience across private and public sectors in Nigeria and the United Kingdom." },
+] as const;
+
+export const faqItems = [
+  { question: "How do I begin a conversation with Rockville LP?", answer: "Contact the firm by phone or email to introduce your matter. The team can then discuss the next appropriate step for engaging counsel." },
+  { question: "What areas of law does Rockville LP cover?", answer: "Rockville LP provides legal advisory, company secretarial, regulatory compliance, intellectual property, property, litigation, due diligence, corporate, and debt recovery or restructuring services." },
+  { question: "Can Rockville LP assist with property matters?", answer: "Yes. The firm’s practice includes real estate and property law, including property transactions, documentation, title review, leases, and related disputes." },
+  { question: "Does the firm support businesses with corporate and compliance matters?", answer: "Yes. Rockville LP supports corporate law, company secretarial work, governance, regulatory compliance, due diligence, and related commercial matters." },
+  { question: "Can Rockville LP help resolve a dispute without going to court?", answer: "The firm supports negotiation, mediation, arbitration, settlement, and litigation. The appropriate route depends on the matter and the parties involved." },
+  { question: "What should I expect when engaging the firm?", answer: "Rockville LP approaches each mandate with a careful assessment of the legal and business context, clear communication, and a considered strategy for the matter at hand." },
+] as const;
+
 export const onlineServiceGroups: OnlineServiceGroup[] = [
   { title: "Intellectual property", intro: "Protect and progress your ideas.", services: ["Trade Mark Applications", "Patent Applications", "Industrial Design", "Copyright"] },
   { title: "Simple legal documents", intro: "Start with the documents your arrangement needs.", services: ["Tenancy Agreement", "Hire Purchase Agreement", "Partnership Agreement"] },
