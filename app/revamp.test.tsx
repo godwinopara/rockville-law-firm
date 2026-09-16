@@ -25,8 +25,11 @@ test("about presents the agreed editorial sequence", () => {
   assert.match(html, /Our team/);
 });
 
-test("team page is honest when verified profiles are unavailable", () => {
+test("team page presents the verified Rockville roster", () => {
   const html = renderToStaticMarkup(<Team />);
-  assert.match(html, /Team profiles are being prepared/);
-  assert.doesNotMatch(html, /Legal Practitioners · Lagos/);
+  assert.match(html, /Rufus C. Okoli/);
+  assert.match(html, /Ngozi R. Okoli/);
+  assert.match(html, /Dr. Nosike Agokei/);
+  assert.doesNotMatch(html, /Team profiles are being prepared/);
+  assert.doesNotMatch(html, /Founding partners portrait placeholder/);
 });
