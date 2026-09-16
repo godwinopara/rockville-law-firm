@@ -1,0 +1,2 @@
+export type ContactFormValues={name:string;email:string;message:string};export type ContactFormErrors=Partial<Record<keyof ContactFormValues,string>>;
+export function validateContactForm(v:ContactFormValues):ContactFormErrors{const e:ContactFormErrors={};if(!v.name.trim())e.name="Enter your name.";if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email))e.email="Enter a valid email address.";if(!v.message.trim())e.message="Tell us how we can help.";return e}
