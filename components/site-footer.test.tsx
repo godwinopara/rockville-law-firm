@@ -11,5 +11,7 @@ test("footer provides a complete service directory without false affordances", (
   for (const area of practiceAreas) {
     assert.match(html, new RegExp(`href="/services/${area.slug}"`));
   }
+  assert.match(html, /text-brand-blue-light/);
+  assert.doesNotMatch(html, /text-paper\/35/);
   assert.doesNotMatch(html, /Subscribe|LinkedIn|Instagram|Twitter/);
 });

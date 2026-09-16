@@ -22,7 +22,7 @@ export function ContactForm() {
     window.location.href = `mailto:info@rockvillelp.com?subject=${encodeURIComponent(`Consultation request from ${values.name}`)}&body=${encodeURIComponent(`Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`)}`;
   };
 
-  const fieldClass = "border-b border-line bg-transparent px-0 py-4 outline-none transition-colors focus:border-gold";
+  const fieldClass = "border-b border-line bg-transparent px-0 py-4 outline-none transition-colors focus:border-brand-blue";
   return <form noValidate onSubmit={submit} className="mt-10 grid gap-7">
     <label className="grid text-xs font-semibold uppercase tracking-[.1em]">Name<input id="name" name="name" autoComplete="name" aria-invalid={!!errors.name} aria-describedby={errors.name ? "name-error" : undefined} className={fieldClass} value={values.name} onChange={(event) => change("name", event.target.value)} />{errors.name && <span id="name-error" className="mt-2 normal-case tracking-normal text-[#9b2f26]">{errors.name}</span>}</label>
     <label className="grid text-xs font-semibold uppercase tracking-[.1em]">Email<input id="email" name="email" autoComplete="email" type="email" aria-invalid={!!errors.email} aria-describedby={errors.email ? "email-error" : undefined} className={fieldClass} value={values.email} onChange={(event) => change("email", event.target.value)} />{errors.email && <span id="email-error" className="mt-2 normal-case tracking-normal text-[#9b2f26]">{errors.email}</span>}</label>
