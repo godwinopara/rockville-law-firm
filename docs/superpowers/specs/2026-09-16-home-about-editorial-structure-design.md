@@ -49,15 +49,15 @@ Build `ProcessSection` as a four-step numbered flow: initial consultation, asses
 
 Build a verified textual roster rather than presenting an unverified stock image as a staff portrait:
 
-- **Rufus C. Okoli** — Founder & Principal Partner; established the practice in 2004.
+- **Rufus C. Okoli** — Principal Partner; established Rufus Okoli & Associates in 2004.
 - **Ngozi R. Okoli** — Partner; co-manages the firm with Rufus.
 - **Dr. Nosike Agokei** — Consultant.
 
-Profiles will be concise on Home and may link to the Team page once that route receives the same verified content. No qualifications, biographies, or claims beyond the user-provided material and firm profile will be invented.
+The section is titled **Our Team**, presenting these three professionals as a team rather than as a group of partners. Profiles will be concise on Home and may link to the Team page once that route receives the same verified content. No qualifications, biographies, or claims beyond the user-provided material and firm profile will be invented.
 
-### Founder's Story
+### The Rockville Story
 
-Separate this from Team. State that Rufus founded the practice (then Rufus Okoli & Associates, now Rockville LP) in 2004. Acknowledge the present co-leadership of Rufus and Ngozi without rewriting the origin story as a joint founding claim. The current generic founders image will be removed from this content unless actual approved portraits are supplied.
+Separate this from Team. Establish the timeline accurately: Rufus established Rufus Okoli & Associates in 2004; Rockville LP, the current full-service firm, was founded in June 2018. Acknowledge the present co-leadership of Rufus and Ngozi without calling either a founder of Rockville LP unless further approved source material says so. The current generic founders image will be removed from this content unless actual approved portraits are supplied.
 
 ### Values
 
