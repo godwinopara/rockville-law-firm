@@ -1,0 +1,8 @@
+import { MotionReveal } from "@/components/motion-reveal";
+
+export function RockvilleStorySection() {
+  return <section className="bg-ink text-paper" aria-labelledby="rockville-story-heading"><div className="page-shell section-space">
+    <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:gap-24"><MotionReveal><p className="eyebrow brand-rule text-brand-blue-light">The Rockville story</p></MotionReveal><MotionReveal><h2 id="rockville-story-heading" className="display max-w-5xl text-5xl leading-[.96] md:text-7xl">A practice shaped by experience, then renewed for a changing legal climate.</h2></MotionReveal></div>
+    <div className="mt-16 grid border-t border-paper/20 lg:grid-cols-2"><MotionReveal className="border-b border-paper/20 py-10 lg:border-b-0 lg:pr-16"><p className="font-mono text-sm text-brand-blue-light">2004</p><h3 className="display mt-8 text-3xl leading-[.98]">The originating practice</h3><p className="mt-6 max-w-xl leading-7 text-paper/68">Rufus C. Okoli established Rufus Okoli &amp; Associates, building the professional foundation from which the current practice evolved.</p></MotionReveal><MotionReveal className="border-b border-paper/20 py-10 lg:border-b-0 lg:border-l lg:border-paper/20 lg:pl-16"><p className="font-mono text-sm text-brand-blue-light">June 2018</p><h3 className="display mt-8 text-3xl leading-[.98]">Rockville LP is founded</h3><p className="mt-6 max-w-xl leading-7 text-paper/68">Rockville LP was founded as a full-service firm, continuously evolving to meet changing laws, business conditions, and the needs of its dynamic clientele.</p></MotionReveal></div>
+  </div></section>;
+}
