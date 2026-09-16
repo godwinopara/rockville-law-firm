@@ -22,7 +22,8 @@ test("about presents the agreed editorial sequence", () => {
   assert.deepEqual(sectionOrder(html, "about"), ["hero", "about", "service", "process", "team", "consultation"]);
   assert.match(html, /A haven of legal and business solutions/);
   assert.match(html, /Company Secretary \/ Compliance/);
-  assert.match(html, /Our team/);
+  assert.match(html, /Initial consultation/);
+  assert.match(html, /Rufus C. Okoli/);
 });
 
 test("team page presents the verified Rockville roster", () => {
