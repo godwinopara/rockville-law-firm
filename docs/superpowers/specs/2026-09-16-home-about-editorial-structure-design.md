@@ -35,6 +35,8 @@ Each page will keep explicit `data-home-section` or `data-about-section` markers
 
 Use a two-column editorial lead inspired by the requested “Refined advocacy for complex matters” reference: restrained eyebrow, strong statement, and supporting copy. It will use Rockville's approved mission, vision, and profile-derived positioning; it will not copy the reference's prose.
 
+On the Home page specifically, this section sits directly below the hero in the user-approved split composition: a generous content column at left and a tall, near-half-width image panel at right. The left column contains the eyebrow, a large editorial heading, two short firm-profile-based paragraphs, primary “Our team” and secondary “Contact us” links, then three ruled proof points at its base. The proof points must make only supportable claims about discretion, representation for individuals and businesses, and strategic guidance. Use an Unsplash legal-office image with people for the right panel until Rockville supplies photography; do not identify the people as Rockville employees or team members. On mobile, the reading column comes first, followed by the image and proof points in a natural vertical order.
+
 ### Practice Areas carousel
 
 Use one reusable `PracticeAreasCarousel`, driven by the existing `practiceAreas` data. It accepts a section eyebrow, title, description, and an optional excluded service slug so that the same component serves three contexts: all Practice Areas on Home, all Practice Areas on About, and “Other Services” on a service-detail page. Each service has a number, title, summary, and a semantic link to `/services/[slug]`; when a service slug is excluded, that active service does not appear in the rail.
