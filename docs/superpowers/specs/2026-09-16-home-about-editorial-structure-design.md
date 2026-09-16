@@ -37,13 +37,15 @@ Use a two-column editorial lead inspired by the requested “Refined advocacy fo
 
 ### Practice Areas carousel
 
-Replace the Home-page practice list with `PracticeAreasCarousel`, driven by the existing `practiceAreas` data. Each service has a descriptive card, number, summary, and a semantic link to `/services/[slug]`. On larger screens, several cards are partially or fully visible to communicate horizontal continuation. On compact screens it becomes a touch-scrollable snap row. Previous/next buttons must be keyboard accessible, correctly labelled, disabled at their limits, and hidden only when unnecessary.
+Use one reusable `PracticeAreasCarousel`, driven by the existing `practiceAreas` data. It accepts a section eyebrow, title, description, and an optional excluded service slug so that the same component serves three contexts: all Practice Areas on Home, all Practice Areas on About, and “Other Services” on a service-detail page. Each service has a number, title, summary, and a semantic link to `/services/[slug]`; when a service slug is excluded, that active service does not appear in the rail.
 
-The About page can retain the existing long-form, sticky presentation of these practice areas because carousel behavior is only requested for Home.
+At desktop, use the user-approved two-column composition: an editorial introduction at left, the existing square Previous/Next controls directly below it, and the horizontally scrollable card rail at right. On compact screens, the introduction and controls stack above a touch-scrollable snap row. Previous/next buttons must be keyboard accessible, correctly labelled, and disabled at their scroll limits.
+
+Cards are tall, image-led service panels. Source a relevant Unsplash image for each practice area and preserve the source attribution/license record in project content. Each card uses a dark image overlay for readable white content. On hover and keyboard focus, a `#2B3F61` Rockville-blue panel sweeps from top to bottom and becomes the card surface; the image remains beneath the covered panel. Touch and reduced-motion users receive the stable readable state without relying on hover or animation.
 
 ### Process
 
-Build `ProcessSection` as a four-step numbered flow: initial consultation, assessment, tailored strategy, and representation or resolution. It follows the requested Jurida reference in information design—a clear headline and short introduction followed by disciplined, ordered steps—but uses firm-appropriate copy and Rockville's own visual tokens.
+Keep `ProcessSection` as a reusable component, but return it to the existing Practice Areas layout: a sticky editorial introduction at left and a numbered, ruled process list at right. The steps remain initial consultation, assessment, tailored strategy, and representation or resolution. Do not use a standalone, full-width Process design.
 
 ### Team
 
@@ -70,16 +72,16 @@ Build `FaqSection` as a quiet editorial accordion inspired by the requested Juri
 ## Visual direction
 
 - Continue using official Rockville blue `#2B3F61` for solid controls and `#7EA6C4` for readable dark-background accents.
-- Preserve the editorial, high-contrast type scale and paper/ink alternation rather than importing the templates’ brand, colors, images, or copy.
-- Use one primary visual gesture per section—horizontal travel for Practice Areas, vertical sequence for Process, typographic roster for Team, and calm disclosure rows for FAQs.
+- Preserve the editorial, high-contrast type scale and paper/ink alternation rather than importing the templates’ brand or copy. Unsplash imagery may be used only for the approved Practice Areas cards.
+- Use one primary visual gesture per section—the Rockville-blue vertical sweep for Practice Areas, a ruled left/right layout for Process, typographic roster for Team, and calm disclosure rows for FAQs.
 - Ensure no text over image is required for legibility and no generic portrait is attributed to a named employee.
 
 ## Implementation boundaries
 
-Likely changes are `app/page.tsx`, `app/about/page.tsx`, `components/founder-section.tsx` (split or replaced), new focused section components, `lib/content.ts`, and render tests. The Team route should be updated in the same change to remove its now-inaccurate “profiles are being prepared” message.
+Likely changes are `app/page.tsx`, `app/about/page.tsx`, `app/services/[slug]/page.tsx`, `components/practice-areas-carousel.tsx`, `components/process-section.tsx`, `lib/content.ts`, locally stored Unsplash image assets with source metadata, and render tests. The Team route should be updated in the same change to remove its now-inaccurate “profiles are being prepared” message.
 
 ## Verification
 
-- Test both page sequences and the carousel/service links with server-rendered markup tests.
+- Test both page sequences, all three carousel contexts, excluded current-service behavior, carousel/service links, and hover/focus semantics with server-rendered markup tests.
 - Test FAQ semantic control attributes and verified team labels.
 - Run unit tests, lint, production build, and browser-based desktop/mobile runtime and accessibility checks.
