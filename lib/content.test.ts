@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { contactDetails, getPracticeAreaBySlug, getRelatedPracticeAreas, practiceAreas } from "./content";
+import { contactDetails, getPracticeAreaBySlug, getRelatedPracticeAreas, homeAboutVisual, practiceAreas } from "./content";
 
 test("exposes the verified contact channel and complete practice-area index", () => {
   assert.equal(contactDetails.email, "info@rockvillelp.com");
@@ -19,6 +19,12 @@ test("every practice area has complete route and detail content", () => {
     assert.ok(area.matters.length >= 4);
     assert.ok(area.approach.length >= 100);
   }
+});
+
+test("every practice area has a locally stored Unsplash visual", () => {
+  assert.equal(practiceAreas.every((area) => area.image.src.startsWith("/images/practice-areas/")), true);
+  assert.equal(practiceAreas.every((area) => area.image.sourceUrl.includes("unsplash.com")), true);
+  assert.equal(homeAboutVisual.src, "/images/home-about-legal-office.jpg");
 });
 
 test("looks up a service and returns adjacent related services", () => {
