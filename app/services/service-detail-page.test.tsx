@@ -25,6 +25,7 @@ test("service detail pages render the complete narrative", async () => {
   assert.match(html, /Our approach/);
   assert.match(html, /Related services/);
   assert.match(html, /Book consultation/);
+  assert.doesNotMatch(html, /<ol[^>]*>\s*<div/);
 });
 
 test("service detail pages build metadata from service content", async () => {

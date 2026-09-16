@@ -5,8 +5,8 @@ description: "A premium international law-firm website built around obsidian con
 colors:
   paper: "#F9F9F9"
   ink: "#121212"
-  gold: "#D4AF37"
-  gold-dark: "#8A711C"
+  brand-blue: "#2B3F61"
+  brand-blue-light: "#7EA6C4"
   stone: "#706F68"
   line: "#DEDDD7"
   panel: "#F0EFEA"
@@ -41,7 +41,7 @@ components:
 
 ### Creative north star
 
-Rockville feels like a precise international legal publication placed inside a dark architectural gallery. Obsidian grounds the site, off-white gives the content room to breathe, and champagne-gold appears only as a directional signal. Large Fraunces headlines carry the voice; disciplined rules, image crops, and long pauses create authority without decoration.
+Rockville feels like a precise international legal publication placed inside a dark architectural gallery. Obsidian grounds the site, off-white gives the content room to breathe, and the slate-blue drawn from its logo appears only as a directional signal. Large Fraunces headlines carry the voice; disciplined rules, image crops, and long pauses create authority without decoration.
 
 ### Product context and register
 
@@ -49,13 +49,13 @@ Rockville feels like a precise international legal publication placed inside a d
 - **Market:** International-facing. The firm’s physical location is factual contact information and appears only where operationally useful, such as the footer and Contact page.
 - **Language:** Clear international English.
 - **Register:** Premium public brand and service website. Expression leads in hero composition; navigation, forms, and consultation actions remain familiar and accessible.
-- **Signature:** Massive editorial type set against cinematic architectural stills, with restrained gold rules and staggered reveal motion.
+- **Signature:** Massive editorial type set against cinematic architectural stills, with restrained blue rules and staggered reveal motion.
 - **Anti-references:** Gavels, fake awards or figures, rounded dashboard cards, default corporate blue, noisy gradients, invented people, and aggressive scroll effects.
 - **Runtime ownership:** `app/globals.css` is canonical. This document mirrors its variables and patterns.
 
 ## Colors
 
-`ink` is the primary immersive surface and text color. `paper` is the reading surface and dark-section text. `gold` is reserved for primary actions, fine rules, numbering, and focus; it is not used for long passages. `stone` supports secondary copy, `line` divides editorial content, and `panel` distinguishes quiet service and form surfaces. There is no theme toggle.
+`ink` is the primary immersive surface and text color. `paper` is the reading surface and dark-section text. `brand-blue` is reserved for primary actions, fine rules, numbering, and focus; `brand-blue-light` provides the accessible accent on ink surfaces. Neither is used for long passages. `stone` supports secondary copy, `line` divides editorial content, and `panel` distinguishes quiet service and form surfaces. There is no theme toggle.
 
 ## Typography
 
@@ -73,7 +73,7 @@ Heroes use a single architectural or professional still with a dark directional 
 
 ### Buttons and links
 
-Primary consultation actions use gold with ink text. Secondary actions use a one-pixel border. Text links use a restrained underline and directional arrow. All states retain visible keyboard focus.
+Primary consultation actions use brand blue with off-white text. Secondary actions use a one-pixel border. Text links use a restrained underline and directional arrow. All states retain visible keyboard focus.
 
 ### Practice index and values
 
