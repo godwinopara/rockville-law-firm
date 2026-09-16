@@ -13,7 +13,7 @@ test("home leads with one consultation action and a complete practice index", ()
   assert.match(html, /Book consultation/);
   assert.match(html, /Company Secretary \/ Compliance/);
   assert.match(html, /Alternative Dispute Resolution/);
-  assert.deepEqual(sectionOrder(html, "home"), ["hero", "about", "service", "process", "team", "consultation"]);
+  assert.deepEqual(sectionOrder(html, "home"), ["hero", "about", "service", "process", "team", "story", "values", "consultation", "faq"]);
 });
 
 test("about presents the agreed editorial sequence", () => {
@@ -22,11 +22,15 @@ test("about presents the agreed editorial sequence", () => {
   assert.deepEqual(sectionOrder(html, "about"), ["hero", "about", "service", "process", "team", "consultation"]);
   assert.match(html, /A haven of legal and business solutions/);
   assert.match(html, /Company Secretary \/ Compliance/);
-  assert.match(html, /Our founders’ story/);
+  assert.match(html, /Initial consultation/);
+  assert.match(html, /Rufus C. Okoli/);
 });
 
-test("team page is honest when verified profiles are unavailable", () => {
+test("team page presents the verified Rockville roster", () => {
   const html = renderToStaticMarkup(<Team />);
-  assert.match(html, /Team profiles are being prepared/);
-  assert.doesNotMatch(html, /Legal Practitioners · Lagos/);
+  assert.match(html, /Rufus C. Okoli/);
+  assert.match(html, /Ngozi R. Okoli/);
+  assert.match(html, /Dr. Nosike Agokei/);
+  assert.doesNotMatch(html, /Team profiles are being prepared/);
+  assert.doesNotMatch(html, /Founding partners portrait placeholder/);
 });

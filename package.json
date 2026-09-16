@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test"
+    "test": "tsx --test 'app/**/*.test.tsx' 'components/**/*.test.tsx' 'lib/**/*.test.ts'"
   },
   "dependencies": {
     "gsap": "^3.15.0",
