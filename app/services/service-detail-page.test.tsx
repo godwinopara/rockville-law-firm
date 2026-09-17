@@ -22,11 +22,14 @@ test("service detail pages render the complete narrative", async () => {
 
   assert.match(html, /Corporate Law/);
   assert.match(html, /data-service-detail-layout="editorial-sidebar"/);
-  assert.match(html, /aria-label="Service detail practice areas"/);
+  assert.match(html, /data-service-detail-sidebar/);
+  assert.match(html, /data-service-detail-spacer/);
+  assert.match(html, /data-service-detail-content/);
+  assert.match(html, /lg:grid-cols-\[25%_15%_60%\]/);
+  assert.doesNotMatch(html, /aria-label="Service detail practice areas"/);
   assert.match(html, /Rufus C. Okoli/);
   assert.match(html, /Founder &amp; Principal Partner/);
   assert.match(html, /Rufus Okoli, Founder and Principal Partner/);
-  assert.match(html, /href="\/services\/real-estate-property-law"/);
   assert.match(html, /How we can assist/);
   assert.match(html, /Our approach/);
   assert.match(html, /Other services/);
