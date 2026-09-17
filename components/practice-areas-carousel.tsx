@@ -6,9 +6,9 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { practiceAreas } from "@/lib/content";
 
-type PracticeAreasCarouselProps = { eyebrow: string; title: string; description: string; excludeSlug?: string };
+type PracticeAreasCarouselProps = { eyebrow: string; title: string; description: string; excludeSlug?: string; showAllServicesLink?: boolean };
 
-export function PracticeAreasCarousel({ eyebrow, title, description, excludeSlug }: PracticeAreasCarouselProps) {
+export function PracticeAreasCarousel({ eyebrow, title, description, excludeSlug, showAllServicesLink = false }: PracticeAreasCarouselProps) {
   const railRef = useRef<HTMLDivElement>(null);
   const [canGoBack, setCanGoBack] = useState(false);
   const [canGoForward, setCanGoForward] = useState(true);
@@ -38,7 +38,7 @@ export function PracticeAreasCarousel({ eyebrow, title, description, excludeSlug
 
   return <section data-practice-carousel-layout="split" className="overflow-hidden bg-ink py-20 text-paper md:py-28" aria-labelledby="practice-carousel-heading">
     <div className="page-shell grid gap-12 lg:grid-cols-[minmax(19rem,.62fr)_minmax(0,1.38fr)] lg:gap-16">
-      <div className="flex flex-col lg:pb-3"><p className="eyebrow brand-rule text-brand-blue-light">{eyebrow}</p><h2 id="practice-carousel-heading" className="display mt-7 text-5xl leading-[.96] md:text-6xl">{title}</h2><p className="mt-7 max-w-md leading-7 text-paper/70">{description}</p>
+      <div className="flex flex-col lg:pb-3"><p className="eyebrow brand-rule text-brand-blue-light">{eyebrow}</p><h2 id="practice-carousel-heading" className="display mt-7 text-5xl leading-[.96] md:text-6xl">{title}</h2><p className="mt-7 max-w-md leading-7 text-paper/70">{description}</p>{showAllServicesLink && <Link href="/services" className="text-link mt-7 text-paper hover:text-brand-blue-light">View all services <ArrowUpRight aria-hidden="true" size={15} /></Link>}
         <div className="mt-10 flex gap-3" role="group" aria-label="Practice area carousel controls">
           <button type="button" className="inline-flex h-12 w-12 items-center justify-center border border-paper/25 text-paper transition-colors hover:border-brand-blue-light hover:text-brand-blue-light disabled:cursor-not-allowed disabled:opacity-35 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue-light" aria-label="Previous practice areas" disabled={!canGoBack} onClick={() => move(-1)}><ArrowLeft size={19} strokeWidth={1.5} /></button>
           <button type="button" className="inline-flex h-12 w-12 items-center justify-center border border-paper/25 text-paper transition-colors hover:border-brand-blue-light hover:text-brand-blue-light disabled:cursor-not-allowed disabled:opacity-35 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue-light" aria-label="Next practice areas" disabled={!canGoForward} onClick={() => move(1)}><ArrowRight size={19} strokeWidth={1.5} /></button>

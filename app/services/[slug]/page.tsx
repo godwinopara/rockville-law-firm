@@ -5,9 +5,9 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { ConsultationBanner } from "@/components/consultation-banner";
 import { MotionReveal } from "@/components/motion-reveal";
+import { PracticeAreasCarousel } from "@/components/practice-areas-carousel";
 import {
   getPracticeAreaBySlug,
-  getRelatedPracticeAreas,
   practiceAreas,
 } from "@/lib/content";
 
@@ -31,8 +31,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const { slug } = await params;
   const area = getPracticeAreaBySlug(slug);
   if (!area) notFound();
-
-  const related = getRelatedPracticeAreas(slug);
 
   return <>
     <section className="relative isolate min-h-[calc(100svh-79px)] overflow-hidden bg-ink text-paper">
@@ -65,10 +63,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <MotionReveal delay={.08}><h2 className="display text-5xl leading-[1.02] md:text-7xl">Advice grounded in context, clarity, and careful judgment.</h2><p className="mt-9 max-w-3xl text-lg leading-8 text-paper/68">{area.approach}</p></MotionReveal>
     </div></section>
 
-    <section className="bg-paper"><div className="page-shell section-space">
-      <MotionReveal className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><p className="eyebrow brand-rule text-stone">Continue exploring</p><h2 className="display mt-7 text-5xl leading-none md:text-7xl">Related services</h2></div><Link href="/services" className="text-link">View all services<ArrowUpRight aria-hidden="true" size={15} /></Link></MotionReveal>
-      <div className="mt-14 grid border-t border-line md:grid-cols-3">{related.map((item, index) => <MotionReveal key={item.slug} className={`py-9 md:px-9 ${index > 0 ? "border-t border-line md:border-l md:border-t-0" : "md:pl-0"} ${index === related.length - 1 ? "md:pr-0" : ""}`}><p className="font-mono text-xs text-brand-blue">{item.number}</p><h3 className="display mt-6 text-3xl leading-tight md:text-4xl">{item.title}</h3><Link href={`/services/${item.slug}`} className="text-link mt-8">Read more<ArrowUpRight aria-hidden="true" size={15} /></Link></MotionReveal>)}</div>
-    </div></section>
+    <PracticeAreasCarousel eyebrow="Other services" title="Continue exploring." description="Explore other areas of Rockville LP’s practice." excludeSlug={area.slug} showAllServicesLink />
 
     <ConsultationBanner heading="Bring us the matter. We will help you see the way forward." />
   </>;

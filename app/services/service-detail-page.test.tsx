@@ -23,7 +23,10 @@ test("service detail pages render the complete narrative", async () => {
   assert.match(html, /Corporate Law/);
   assert.match(html, /How we can assist/);
   assert.match(html, /Our approach/);
-  assert.match(html, /Related services/);
+  assert.match(html, /Other services/);
+  assert.match(html, /View all services/);
+  assert.doesNotMatch(html, /data-practice-carousel-card="04"/);
+  assert.match(html, /href="\/services\/company-secretary-compliance"/);
   assert.match(html, /Book consultation/);
   assert.doesNotMatch(html, /<ol[^>]*>\s*<div/);
 });
