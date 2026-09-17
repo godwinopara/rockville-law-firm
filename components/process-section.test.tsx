@@ -12,4 +12,6 @@ test("process section presents the four stages of engagement", () => {
   assert.match(html, /Matter assessment/);
   assert.match(html, /Tailored strategy/);
   assert.match(html, /Representation &amp; resolution/);
+  assert.match(html, /images%2Ffirm%2Flibrary-supreme-court-cases\.jpg/);
+  assert.match(html, /Rockville LP library of Nigerian Supreme Court cases/);
 });

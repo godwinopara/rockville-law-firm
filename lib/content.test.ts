@@ -21,10 +21,10 @@ test("every practice area has complete route and detail content", () => {
   }
 });
 
-test("every practice area has a locally stored Unsplash visual", () => {
+test("practice areas retain their locally stored visuals and Home About uses firm photography", () => {
   assert.equal(practiceAreas.every((area) => area.image.src.startsWith("/images/practice-areas/")), true);
   assert.equal(practiceAreas.every((area) => area.image.sourceUrl.includes("unsplash.com")), true);
-  assert.equal(homeAboutVisual.src, "/images/home-about-legal-office.jpg");
+  assert.equal(homeAboutVisual.src, "/images/firm/conference-library.jpg");
 });
 
 test("looks up a service and returns adjacent related services", () => {

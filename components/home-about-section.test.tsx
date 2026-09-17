@@ -9,6 +9,7 @@ test("home About section uses the approved editorial split content", () => {
   assert.match(html, /Refined advocacy for complex matters/);
   assert.match(html, /Our team/);
   assert.match(html, /Contact us/);
-  assert.match(html, /Legal professionals meeting in an office/);
+  assert.match(html, /Rockville LP conference room and legal library/);
+  assert.match(html, /images%2Ffirm%2Fconference-library\.jpg/);
   assert.equal((html.match(/data-home-about-proof=/g) ?? []).length, 3);
 });
