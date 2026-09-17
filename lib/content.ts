@@ -15,6 +15,7 @@ export type TeamMember = {
   role: string;
   summary: string;
   image: { src: string; alt: string; sourceUrl?: string };
+  storyTitle: string;
   profile: string[];
 };
 
@@ -174,6 +175,7 @@ export const teamMembers: TeamMember[] = [
     role: "Founder & Principal Partner",
     summary: "An experienced legal practitioner with a practice spanning advocacy, commercial planning, negotiation, real estate, corporate, commercial, and maritime law.",
     image: { src: "/images/rufus-okoli.jpg", alt: "Rufus C. Okoli, Founder and Principal Partner" },
+    storyTitle: "Experience shaped across advocacy, commerce, property, and maritime law.",
     profile: [
       "The Principal Partner, Rufus C. Okoli is an experienced legal practitioner with a demonstrated track record in the law practice industry. His work includes advocacy and litigation, legal writing, business planning, and negotiation, with broad knowledge of real estate, corporate, commercial, and maritime law.",
       "Rufus was called to the Nigerian Bar in September, 1999 and obtained his LL.M degree in Maritime Law from Lagos State University, Ojo, in 2004.",
@@ -185,6 +187,7 @@ export const teamMembers: TeamMember[] = [
     role: "Partner",
     summary: "A seasoned legal practitioner whose work includes corporate and commercial law, intellectual property, property law, and company secretarial practice.",
     image: { src: "/images/team/ngozi-okoli-placeholder.jpg", alt: "Temporary portrait placeholder for Ngozi R. Okoli", sourceUrl: "https://images.unsplash.com/photo-1573496799515-eebbb63814f2" },
+    storyTitle: "A career built through advocacy, governance, and commercially focused counsel.",
     profile: [
       "Ngozi Okoli is a seasoned legal practitioner who began her practice with P.N. Umeh & Co. She later developed her advocacy skills at the law office of the late Chief G.O.K. Ajayi, SAN, before joining Adedeji & Owotomo, LLP, where she became a partner.",
       "Her areas of expertise include corporate and commercial law, intellectual property law, property law, and company secretarial practice. Ngozi was called to the Nigerian Bar in 2007 and is a Notary Public of the Supreme Court of Nigeria, a Chartered Secretary, governance professional, and intellectual property expert.",
@@ -196,6 +199,7 @@ export const teamMembers: TeamMember[] = [
     role: "Consultant",
     summary: "A solicitor and advocate of the Supreme Court of Nigeria with experience across private and public sectors in Nigeria and the United Kingdom.",
     image: { src: "/images/team/nosike-agokei-placeholder.jpg", alt: "Temporary portrait placeholder for Dr. Nosike Agokei", sourceUrl: "https://images.unsplash.com/photo-1666866868698-67ee989fba70" },
+    storyTitle: "Breadth of qualification, perspective, and counsel across public and private practice.",
     profile: [
       "Dr. Nosike Agokei holds an LL.B degree from the University of Lagos and is a solicitor and advocate of the Supreme Court of Nigeria. His qualifications also include BSc Econ, BL from the Nigerian Law School, MSc Econ, PhD, and FCIArb (UK).",
       "He is a Fellow Chartered Accountant, Fellow Chartered Secretary, Fellow Chartered Institute of Bankers, and a member of the Chartered Institute of Taxation.",
