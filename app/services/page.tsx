@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ConsultationBanner } from "@/components/consultation-banner";
 import { EditorialHero } from "@/components/editorial-hero";
+import { FaqSection } from "@/components/faq-section";
 import { MotionReveal } from "@/components/motion-reveal";
 import { PracticeAreaCards } from "@/components/practice-area-cards";
 import { onlineServiceGroups } from "@/lib/content";
@@ -20,5 +21,6 @@ export default function Services() {
     <ConsultationBanner />
 
     <section className="bg-panel"><div className="page-shell section-space"><MotionReveal className="grid gap-8 lg:grid-cols-2"><div><p className="eyebrow brand-rule text-stone">Online services</p><h2 className="display mt-8 text-5xl leading-[.96] md:text-7xl">Start with what you need.</h2></div><p className="max-w-xl self-end leading-7 text-stone">Our selected online services create a straightforward first step for defined documentation and registration needs.</p></MotionReveal><div className="mt-16 grid border-t border-line md:grid-cols-2">{onlineServiceGroups.map((group, index) => <MotionReveal key={group.title} className={`py-10 md:p-12 ${index === 0 ? "md:border-r md:border-line md:pl-0" : "border-t border-line md:border-t-0 md:pr-0"}`}><p className="font-mono text-xs text-brand-blue">0{index + 1}</p><h3 className="display mt-6 text-4xl md:text-5xl">{group.title}</h3><p className="mt-4 text-stone">{group.intro}</p><ul className="mt-8 space-y-3">{group.services.map((service) => <li className="border-t border-line pt-3 text-sm" key={service}>{service}</li>)}</ul></MotionReveal>)}</div><MotionReveal className="mt-12"><Link className="btn-primary" href="/contact">Start a request<ArrowUpRight aria-hidden="true" size={16} /></Link></MotionReveal></div></section>
+    <div data-services-section="faq"><FaqSection /></div>
   </>;
 }

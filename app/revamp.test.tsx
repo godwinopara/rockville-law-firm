@@ -2,7 +2,9 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { renderToStaticMarkup } from "react-dom/server";
 import About from "./about/page";
+import Contact from "./contact/page";
 import Home from "./page";
+import Services from "./services/page";
 import Team from "./team/page";
 
 const sectionOrder = (html: string, page: "home" | "about") =>
@@ -19,11 +21,27 @@ test("home leads with one consultation action and a complete practice index", ()
 test("about presents the agreed editorial sequence", () => {
   const html = renderToStaticMarkup(<About />);
 
-  assert.deepEqual(sectionOrder(html, "about"), ["hero", "about", "service", "process", "team", "consultation"]);
+  assert.deepEqual(sectionOrder(html, "about"), ["hero", "about", "mission", "service", "process", "team", "consultation", "faq"]);
+  assert.match(html, /Who we are/);
+  assert.match(html, /Founded in June 2018/);
+  assert.match(html, /over 20 years of combined experience/);
   assert.match(html, /A haven of legal and business solutions/);
   assert.match(html, /Company Secretary \/ Compliance/);
   assert.match(html, /Initial consultation/);
   assert.match(html, /Rufus C. Okoli/);
+});
+
+test("every public index page provides Help and FAQs before the footer", () => {
+  const pages = [
+    ["services", renderToStaticMarkup(<Services />)],
+    ["team", renderToStaticMarkup(<Team />)],
+    ["contact", renderToStaticMarkup(<Contact />)],
+  ] as const;
+
+  for (const [page, html] of pages) {
+    assert.match(html, new RegExp(`data-${page}-section="faq"`));
+    assert.match(html, /Help &amp; FAQs/);
+  }
 });
 
 test("team page presents the verified Rockville roster", () => {
