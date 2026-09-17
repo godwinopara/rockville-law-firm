@@ -18,4 +18,7 @@ test("practice areas carousel exposes every service and its destination", () => 
   assert.match(html, /-translate-y-full/);
   assert.match(html, /group-hover:translate-y-0/);
   assert.match(html, /group-focus-within:translate-y-0/);
+  assert.match(html, /lg:justify-between/);
+  assert.match(html, /scrollbar-width:none/);
+  assert.match(html, /\[&amp;::-webkit-scrollbar\]:hidden/);
 });
