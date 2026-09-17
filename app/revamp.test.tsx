@@ -49,6 +49,10 @@ test("team page presents the verified Rockville roster", () => {
   assert.match(html, /Rufus C. Okoli/);
   assert.match(html, /Ngozi R. Okoli/);
   assert.match(html, /Dr. Nosike Agokei/);
+  assert.equal((html.match(/data-team-profile=/g) ?? []).length, 3);
+  assert.match(html, /called to the Nigerian Bar in September, 1999/);
+  assert.match(html, /Notary Public of the Supreme Court of Nigeria/);
+  assert.match(html, /Fellow Chartered Institute of Bankers/);
   assert.doesNotMatch(html, /Team profiles are being prepared/);
   assert.doesNotMatch(html, /Founding partners portrait placeholder/);
 });
