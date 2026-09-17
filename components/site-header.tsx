@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { primaryNavigation } from "@/lib/content";
@@ -10,7 +11,7 @@ export function SiteHeader() {
   useEffect(() => { const close = (event: KeyboardEvent) => event.key === "Escape" && setOpen(false); window.addEventListener("keydown", close); return () => window.removeEventListener("keydown", close); }, []);
   return <header className="sticky top-0 z-50 border-b border-paper/10 bg-ink text-paper">
     <div className="page-shell flex h-[78px] items-center justify-between">
-      <Link href="/" aria-label="Rockville Legal Practitioners home"><span className="display block text-[1.65rem] leading-none">ROCKVILLE</span><span className="mt-1 block text-[.48rem] font-semibold tracking-[.29em] text-paper/62">LEGAL PRACTITIONERS</span></Link>
+      <Link href="/" aria-label="Rockville Legal Practitioners home" className="inline-flex bg-paper px-3 py-2 transition-transform hover:-translate-y-0.5 motion-reduce:transition-none"><Image src="/images/logo.png" alt="Rockville Legal Practitioners" width={212} height={65} priority className="h-auto w-36 sm:w-40" /></Link>
       <nav className="hidden items-center gap-7 text-[.72rem] font-medium uppercase tracking-[.08em] lg:flex" aria-label="Main navigation">{primaryNavigation.map((item) => <Link className="transition-colors hover:text-brand-blue-light" key={item.href} href={item.href}>{item.label}</Link>)}<Link className="btn-primary ml-2" href="/contact">Book consultation<ArrowUpRight size={15} /></Link></nav>
       <button type="button" className="inline-flex h-11 w-11 items-center justify-center border border-paper/20 lg:hidden" aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}>{open ? <X size={21} /> : <Menu size={21} />}</button>
     </div>
