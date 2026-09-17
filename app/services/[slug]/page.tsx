@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Mail, Phone } from "lucide-react";
 import { ConsultationBanner } from "@/components/consultation-banner";
+import { FaqSection } from "@/components/faq-section";
 import { MotionReveal } from "@/components/motion-reveal";
 import { PracticeAreasCarousel } from "@/components/practice-areas-carousel";
 import {
@@ -61,5 +62,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
     <ConsultationBanner heading="Bring us the matter. We will help you see the way forward." />
     <PracticeAreasCarousel eyebrow="Other services" title="Continue exploring." description="Explore other areas of Rockville LP’s practice." excludeSlug={area.slug} showAllServicesLink />
+    <div data-service-detail-section="faq"><FaqSection /></div>
   </>;
 }
