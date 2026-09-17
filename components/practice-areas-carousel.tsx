@@ -1,14 +1,18 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { practiceAreas } from "@/lib/content";
 
-export function PracticeAreasCarousel() {
+type PracticeAreasCarouselProps = { eyebrow: string; title: string; description: string; excludeSlug?: string };
+
+export function PracticeAreasCarousel({ eyebrow, title, description, excludeSlug }: PracticeAreasCarouselProps) {
   const railRef = useRef<HTMLDivElement>(null);
   const [canGoBack, setCanGoBack] = useState(false);
   const [canGoForward, setCanGoForward] = useState(true);
+  const areas = practiceAreas.filter((area) => area.slug !== excludeSlug);
 
   const updateControls = useCallback(() => {
     const rail = railRef.current;
@@ -32,29 +36,17 @@ export function PracticeAreasCarousel() {
     rail.scrollBy({ left: direction * rail.clientWidth * 0.82, behavior: reducedMotion ? "auto" : "smooth" });
   };
 
-  return <section className="overflow-hidden bg-ink py-20 text-paper md:py-28" aria-labelledby="practice-carousel-heading">
-    <div className="page-shell">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-        <div>
-          <p className="eyebrow brand-rule text-brand-blue-light">Practice areas</p>
-          <h2 id="practice-carousel-heading" className="display mt-7 max-w-4xl text-5xl leading-[.96] md:text-7xl">Confidence, resilience, and strategic precision.</h2>
-          <p className="mt-7 max-w-2xl text-base leading-7 text-paper/70 md:text-lg">Legal support grounded in commercial awareness, disciplined preparation, and clear advice for every stage of a consequential matter.</p>
-        </div>
-        <div className="flex gap-3" role="group" aria-label="Practice area carousel controls">
+  return <section data-practice-carousel-layout="split" className="overflow-hidden bg-ink py-20 text-paper md:py-28" aria-labelledby="practice-carousel-heading">
+    <div className="page-shell grid gap-12 lg:grid-cols-[minmax(19rem,.62fr)_minmax(0,1.38fr)] lg:gap-16">
+      <div className="flex flex-col lg:pb-3"><p className="eyebrow brand-rule text-brand-blue-light">{eyebrow}</p><h2 id="practice-carousel-heading" className="display mt-7 text-5xl leading-[.96] md:text-6xl">{title}</h2><p className="mt-7 max-w-md leading-7 text-paper/70">{description}</p>
+        <div className="mt-10 flex gap-3" role="group" aria-label="Practice area carousel controls">
           <button type="button" className="inline-flex h-12 w-12 items-center justify-center border border-paper/25 text-paper transition-colors hover:border-brand-blue-light hover:text-brand-blue-light disabled:cursor-not-allowed disabled:opacity-35 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue-light" aria-label="Previous practice areas" disabled={!canGoBack} onClick={() => move(-1)}><ArrowLeft size={19} strokeWidth={1.5} /></button>
           <button type="button" className="inline-flex h-12 w-12 items-center justify-center border border-paper/25 text-paper transition-colors hover:border-brand-blue-light hover:text-brand-blue-light disabled:cursor-not-allowed disabled:opacity-35 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue-light" aria-label="Next practice areas" disabled={!canGoForward} onClick={() => move(1)}><ArrowRight size={19} strokeWidth={1.5} /></button>
         </div>
       </div>
-    </div>
-    <div ref={railRef} onScroll={updateControls} className="mt-14 flex gap-4 overflow-x-auto px-[max(1.5rem,calc((100vw-80rem)/2))] pb-3 pr-6 [scrollbar-width:thin] snap-x snap-mandatory md:mt-16 md:gap-6" role="region" aria-label="Rockville LP practice areas">
-      {practiceAreas.map((area) => <Link data-practice-carousel-card={area.number} key={area.slug} href={`/services/${area.slug}`} className="group flex min-h-[25rem] w-[min(82vw,26rem)] shrink-0 snap-start flex-col justify-between border border-paper/20 bg-paper/5 p-7 transition-colors hover:border-brand-blue-light focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue-light md:w-[25rem] md:p-9">
-        <div>
-          <span className="font-mono text-xs text-brand-blue-light">{area.number}</span>
-          <h3 className="display mt-12 text-4xl leading-[.98]">{area.title}</h3>
-          <p className="mt-6 leading-7 text-paper/68">{area.description}</p>
-        </div>
-        <span className="flex items-center gap-3 text-sm uppercase tracking-[.14em] text-brand-blue-light">Explore service <ArrowUpRight size={17} strokeWidth={1.5} className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none" /></span>
-      </Link>)}
+      <div ref={railRef} onScroll={updateControls} className="flex gap-5 overflow-x-auto pb-3 snap-x snap-mandatory" role="region" aria-label="Rockville LP practice areas">
+      {areas.map((area) => <Link data-practice-carousel-card={area.number} key={area.slug} href={`/services/${area.slug}`} className="group relative flex min-h-[31rem] w-[min(78vw,27rem)] shrink-0 snap-start overflow-hidden bg-brand-blue p-8 text-paper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue-light"><Image src={area.image.src} alt={area.image.alt} fill sizes="(min-width:1024px) 28vw, 78vw" className="object-cover" /><span className="absolute inset-0 bg-ink/55" /><span className="absolute inset-x-0 top-0 h-full -translate-y-full bg-brand-blue transition-transform duration-500 group-hover:translate-y-0 group-focus-within:translate-y-0 motion-reduce:transition-none" /><span className="relative z-10 flex h-full flex-1 flex-col"><span className="font-mono text-sm">{area.number}</span><span className="display mt-14 text-4xl leading-[.96]">{area.title}</span><span className="mt-auto leading-7">{area.description}</span><span className="mt-8 flex items-center gap-3 text-sm uppercase tracking-[.14em]">Explore service <ArrowUpRight size={17} /></span></span></Link>)}
+      </div>
     </div>
   </section>;
 }
