@@ -10,6 +10,13 @@ export type PracticeArea = {
   image: { src: string; alt: string; sourceUrl: string };
 };
 export type OnlineServiceGroup = { title: string; intro: string; services: string[] };
+export type TeamMember = {
+  name: string;
+  role: string;
+  summary: string;
+  image: { src: string; alt: string; sourceUrl?: string };
+  profile: string[];
+};
 
 export const contactDetails = {
   phonePrimary: "+234(0)803 306 4300",
@@ -161,11 +168,41 @@ export const processSteps = [
   { number: "04", title: "Representation & resolution", body: "We provide focused guidance and representation through negotiation, alternative dispute resolution, or litigation where required." },
 ] as const;
 
-export const teamMembers = [
-  { name: "Rufus C. Okoli", role: "Founder & Principal Partner", summary: "An experienced legal practitioner with a practice spanning advocacy, commercial planning, negotiation, real estate, corporate, commercial, and maritime law." },
-  { name: "Ngozi R. Okoli", role: "Partner", summary: "A seasoned legal practitioner whose work includes corporate and commercial law, intellectual property, property law, and company secretarial practice." },
-  { name: "Dr. Nosike Agokei", role: "Consultant", summary: "A solicitor and advocate of the Supreme Court of Nigeria with experience across private and public sectors in Nigeria and the United Kingdom." },
-] as const;
+export const teamMembers: TeamMember[] = [
+  {
+    name: "Rufus C. Okoli",
+    role: "Founder & Principal Partner",
+    summary: "An experienced legal practitioner with a practice spanning advocacy, commercial planning, negotiation, real estate, corporate, commercial, and maritime law.",
+    image: { src: "/images/rufus-okoli.jpg", alt: "Rufus C. Okoli, Founder and Principal Partner" },
+    profile: [
+      "The Principal Partner, Rufus C. Okoli is an experienced legal practitioner with a demonstrated track record in the law practice industry. His work includes advocacy and litigation, legal writing, business planning, and negotiation, with broad knowledge of real estate, corporate, commercial, and maritime law.",
+      "Rufus was called to the Nigerian Bar in September, 1999 and obtained his LL.M degree in Maritime Law from Lagos State University, Ojo, in 2004.",
+      "He practised as a junior counsel with Philip Ndubuisi Umeh & Co. before heading the law practice of Oguguo & Oguguo Associates. In 2004, he established Rufus Okoli & Associates, the originating practice from which Rockville LP evolved.",
+    ],
+  },
+  {
+    name: "Ngozi R. Okoli",
+    role: "Partner",
+    summary: "A seasoned legal practitioner whose work includes corporate and commercial law, intellectual property, property law, and company secretarial practice.",
+    image: { src: "/images/team/ngozi-okoli-placeholder.jpg", alt: "Temporary portrait placeholder for Ngozi R. Okoli", sourceUrl: "https://images.unsplash.com/photo-1573496799515-eebbb63814f2" },
+    profile: [
+      "Ngozi Okoli is a seasoned legal practitioner who began her practice with P.N. Umeh & Co. She later developed her advocacy skills at the law office of the late Chief G.O.K. Ajayi, SAN, before joining Adedeji & Owotomo, LLP, where she became a partner.",
+      "Her areas of expertise include corporate and commercial law, intellectual property law, property law, and company secretarial practice. Ngozi was called to the Nigerian Bar in 2007 and is a Notary Public of the Supreme Court of Nigeria, a Chartered Secretary, governance professional, and intellectual property expert.",
+      "She is an Associate of the Institute of Chartered Secretaries and Administrators of Nigeria, a member of the International Trademark Association, and a member of the Nigerian Bar Association. Ngozi serves on the ICSAN National publication committee and previously served as an executive member of the ICSAN Lagos State Chapter.",
+    ],
+  },
+  {
+    name: "Dr. Nosike Agokei",
+    role: "Consultant",
+    summary: "A solicitor and advocate of the Supreme Court of Nigeria with experience across private and public sectors in Nigeria and the United Kingdom.",
+    image: { src: "/images/team/nosike-agokei-placeholder.jpg", alt: "Temporary portrait placeholder for Dr. Nosike Agokei", sourceUrl: "https://images.unsplash.com/photo-1666866868698-67ee989fba70" },
+    profile: [
+      "Dr. Nosike Agokei holds an LL.B degree from the University of Lagos and is a solicitor and advocate of the Supreme Court of Nigeria. His qualifications also include BSc Econ, BL from the Nigerian Law School, MSc Econ, PhD, and FCIArb (UK).",
+      "He is a Fellow Chartered Accountant, Fellow Chartered Secretary, Fellow Chartered Institute of Bankers, and a member of the Chartered Institute of Taxation.",
+      "Dr. Agokei has served in private and public-sector capacities in Nigeria and the United Kingdom, and has attended several seminars within and outside Nigeria. He is one of the firm’s consultants.",
+    ],
+  },
+];
 
 export const faqItems = [
   { question: "How do I begin a conversation with Rockville LP?", answer: "Contact the firm by phone or email to introduce your matter. The team can then discuss the next appropriate step for engaging counsel." },
