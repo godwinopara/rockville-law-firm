@@ -21,4 +21,5 @@ test("practice areas carousel exposes every service and its destination", () => 
   assert.match(html, /lg:justify-between/);
   assert.match(html, /scrollbar-width:none/);
   assert.match(html, /\[&amp;::-webkit-scrollbar\]:hidden/);
+  assert.match(html, /lg:w-\[calc\(\(100%-2\.5rem\)\/2\.5\)\]/);
 });
