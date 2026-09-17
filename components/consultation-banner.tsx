@@ -11,8 +11,8 @@ type ConsultationBannerProps = {
 };
 
 export function ConsultationBanner({
-  image = "/images/lagos-office.jpg",
-  imageAlt = "Contemporary architectural setting",
+  image = "/images/firm/reception.jpg",
+  imageAlt = "Rockville LP reception area",
   heading = "We take every matter seriously and respond with considered representation.",
   body = "We approach each instruction with precision, discretion, and close attention to the context, delivering guidance shaped around the matter at hand.",
 }: ConsultationBannerProps) {

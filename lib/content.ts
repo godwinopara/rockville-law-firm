@@ -157,9 +157,8 @@ export function getRelatedPracticeAreas(slug: string, count = 3) {
 
 export const coreValues = ["Professionalism", "Respect", "Efficiency", "Practicality", "Sincerity"];
 export const homeAboutVisual = {
-  src: "/images/home-about-legal-office.jpg",
-  alt: "Legal professionals meeting in an office",
-  sourceUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902",
+  src: "/images/firm/conference-library.jpg",
+  alt: "Rockville LP conference room and legal library",
 } as const;
 
 export const processSteps = [
