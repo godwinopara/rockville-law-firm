@@ -1,17 +1,18 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { renderToStaticMarkup } from "react-dom/server";
-import { practiceAreas } from "@/lib/content";
 import { SiteFooter } from "./site-footer";
 
-test("footer provides a complete service directory without false affordances", () => {
+test("footer uses the approved three-panel firm, navigation, and contact layout", () => {
   const html = renderToStaticMarkup(<SiteFooter />);
 
-  assert.match(html, /Rockville Legal/);
-  for (const area of practiceAreas) {
-    assert.match(html, new RegExp(`href="/services/${area.slug}"`));
-  }
-  assert.match(html, /text-brand-blue-light/);
+  assert.match(html, /data-footer-layout="three-panel"/);
+  assert.match(html, /images%2Flogo\.png/);
+  assert.match(html, /Footer navigation/);
+  assert.match(html, /77, AWOLOWO RD, IKOYI, LAGOS STATE/);
+  assert.match(html, /info@rockvillelp\.com/);
+  assert.match(html, /sm:grid-cols-2/);
+  assert.doesNotMatch(html, /href="\/services\/company-secretary-compliance"/);
   assert.doesNotMatch(html, /text-paper\/35/);
   assert.doesNotMatch(html, /Subscribe|LinkedIn|Instagram|Twitter/);
 });
