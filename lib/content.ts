@@ -14,7 +14,7 @@ export type TeamMember = {
   name: string;
   role: string;
   summary: string;
-  image: { src: string; alt: string; sourceUrl?: string };
+  image?: { src: string; alt: string; sourceUrl?: string };
   storyTitle: string;
   profile: string[];
 };
@@ -185,7 +185,7 @@ export const teamMembers: TeamMember[] = [
     name: "Ngozi R. Okoli",
     role: "Partner",
     summary: "A seasoned legal practitioner whose work includes corporate and commercial law, intellectual property, property law, and company secretarial practice.",
-    image: { src: "/images/team/ngozi-okoli-placeholder.jpg", alt: "Temporary portrait placeholder for Ngozi R. Okoli", sourceUrl: "https://images.unsplash.com/photo-1573496799515-eebbb63814f2" },
+    image: { src: "/images/team/ngozi-okoli.jpg", alt: "Ngozi R. Okoli, Partner" },
     storyTitle: "A career built through advocacy, governance, and commercially focused counsel.",
     profile: [
       "Ngozi Okoli is a seasoned legal practitioner who began her practice with P.N. Umeh & Co. She later developed her advocacy skills at the law office of the late Chief G.O.K. Ajayi, SAN, before joining Adedeji & Owotomo, LLP, where she became a partner.",
@@ -197,7 +197,6 @@ export const teamMembers: TeamMember[] = [
     name: "Dr. Nosike Agokei",
     role: "Consultant",
     summary: "A solicitor and advocate of the Supreme Court of Nigeria with experience across private and public sectors in Nigeria and the United Kingdom.",
-    image: { src: "/images/team/nosike-agokei-placeholder.jpg", alt: "Temporary portrait placeholder for Dr. Nosike Agokei", sourceUrl: "https://images.unsplash.com/photo-1666866868698-67ee989fba70" },
     storyTitle: "Breadth of qualification, perspective, and counsel across public and private practice.",
     profile: [
       "Dr. Nosike Agokei holds an LL.B degree from the University of Lagos and is a solicitor and advocate of the Supreme Court of Nigeria. His qualifications also include BSc Econ, BL from the Nigerian Law School, MSc Econ, PhD, and FCIArb (UK).",

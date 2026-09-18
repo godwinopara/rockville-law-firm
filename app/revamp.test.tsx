@@ -53,6 +53,8 @@ test("team page presents the verified Rockville roster", () => {
   assert.equal((html.match(/data-team-story-layout="founder-story"/g) ?? []).length, 3);
   assert.equal((html.match(/Our team member’s story/g) ?? []).length, 3);
   assert.equal((html.match(/aria-label="Team profile contact details"/g) ?? []).length, 3);
+  assert.equal((html.match(/data-team-photo-frame="fixed"/g) ?? []).length, 3);
+  assert.match(html, /Portrait forthcoming/);
   assert.match(html, /called to the Nigerian Bar in September, 1999/);
   assert.match(html, /Notary Public of the Supreme Court of Nigeria/);
   assert.match(html, /Fellow Chartered Institute of Bankers/);
