@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Mail, Phone } from "lucide-react";
 import { ConsultationBanner } from "@/components/consultation-banner";
 import { FaqSection } from "@/components/faq-section";
+import { HeroBackgroundSlider } from "@/components/hero-background-slider";
 import { MotionReveal } from "@/components/motion-reveal";
 import { PracticeAreasCarousel } from "@/components/practice-areas-carousel";
 import {
@@ -36,10 +37,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
   return <>
     <section className="relative isolate min-h-[calc(100svh-79px)] overflow-hidden bg-ink text-paper">
-      <MotionReveal variant="media" className="absolute inset-y-0 right-0 -z-20 w-full lg:w-[47%]">
-        <Image src="/images/lagos-tower.jpg" alt="Geometric high-rise architecture" fill priority sizes="(min-width: 1024px) 47vw, 100vw" className="object-cover grayscale" />
-      </MotionReveal>
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#121212_0%,#121212_48%,rgba(18,18,18,.72)_70%,rgba(18,18,18,.42)_100%)]" />
+      <HeroBackgroundSlider priority slides={[{ image: area.image.src, alt: area.image.alt }, { image: "/images/firm/conference-library-wide.jpg", alt: "Rockville LP conference room and legal library" }, { image: "/images/firm/reception.jpg", alt: "Rockville LP reception area" }]} />
       <div className="page-shell flex min-h-[calc(100svh-79px)] flex-col justify-between py-10 md:py-16">
         <MotionReveal variant="hero"><Link href="/services" className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[.14em] text-paper/65 transition-colors hover:text-brand-blue-light"><ArrowLeft aria-hidden="true" size={15} />All services</Link></MotionReveal>
         <div className="max-w-5xl py-14">
