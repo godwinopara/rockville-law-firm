@@ -2,11 +2,11 @@
 
 ## Goal
 
-Give every public Rockville page that uses the existing `EditorialHero` a quiet, image-led automatic slider inspired by the motion pattern of the Koch reference, while preserving Rockville's editorial layout, typography, content, and `#2B3F61` brand system.
+Give every public Rockville page with a hero a quiet, image-led automatic slider inspired by the motion pattern of the Koch reference, while preserving Rockville's editorial layout, typography, content, and `#2B3F61` brand system.
 
 ## Scope
 
-- Home, About, Services, Team, Contact, and every service-detail page using `EditorialHero`.
+- Home, About, Services, Team, Contact, and every service-detail page.
 - Three relevant images per page, rendered as a full-bleed backdrop.
 - A six-second automatic cadence with a crossfade and subtle image-scale movement.
 - A passive `01 — 03` progress treatment. There are no Previous/Next controls.
@@ -14,9 +14,9 @@ Give every public Rockville page that uses the existing `EditorialHero` a quiet,
 
 ## Architecture
 
-`EditorialHero` remains the only public hero API. Its single `image` and `imageAlt` inputs become an optional backwards-compatible input, while a new `slides` input accepts an ordered array of `{ image, alt }` items.
+`HeroBackgroundSlider` is the shared client foundation used by both `EditorialHero` and the bespoke service-detail hero. It accepts an ordered array of `{ image, alt }` items and renders the image rail, dark contrast overlay, and passive progress presentation. Both parent hero layouts remain responsible for their own semantic `h1`, page copy, and actions.
 
-The image rail is isolated inside a small client component, `HeroBackgroundSlider`. The parent hero remains responsible for the semantic `h1`, page copy, CTA links, contrast overlay, and progress presentation. The client component owns only the active slide timer and exposes its current index to the progress marker through a callback.
+`EditorialHero` keeps its current page-facing API, but receives a new `slides` input. The current single `image` and `imageAlt` inputs remain as a backwards-compatible fallback. Service-detail pages build their three-image set from their own practice-area visual plus relevant local firm imagery, while retaining their distinct “All services” back link and content position.
 
 Each page passes its own three-image set. Existing locally hosted firm, library, reception, team, office, and practice-area photos are preferred. No external image request is needed for this work. Where an existing page does not have three directly relevant firm images, the supplied, optimized office/library imagery will be selected rather than introducing an unrelated stock image.
 
