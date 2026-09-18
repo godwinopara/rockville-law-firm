@@ -34,12 +34,21 @@ export function HeroBackgroundSlider({ slides, priority = false }: HeroBackgroun
     return () => window.clearInterval(timer);
   }, [canCycle, slides.length]);
 
-  function updateFocusPause() {
-    window.requestAnimationFrame(() => {
-      const containsFocus = containerRef.current?.contains(document.activeElement) ?? false;
-      setPaused(containsFocus || containerRef.current?.matches(":hover") === true);
-    });
-  }
+  useEffect(() => {
+    const hero = containerRef.current?.parentElement;
+    if (!hero) return;
+    const updatePauseState = () => window.requestAnimationFrame(() => setPaused(hero.matches(":hover") || hero.contains(document.activeElement)));
+    hero.addEventListener("mouseenter", updatePauseState);
+    hero.addEventListener("mouseleave", updatePauseState);
+    hero.addEventListener("focusin", updatePauseState);
+    hero.addEventListener("focusout", updatePauseState);
+    return () => {
+      hero.removeEventListener("mouseenter", updatePauseState);
+      hero.removeEventListener("mouseleave", updatePauseState);
+      hero.removeEventListener("focusin", updatePauseState);
+      hero.removeEventListener("focusout", updatePauseState);
+    };
+  }, []);
 
   if (!activeSlide) return null;
 
@@ -50,10 +59,6 @@ export function HeroBackgroundSlider({ slides, priority = false }: HeroBackgroun
     role="img"
     aria-label={activeSlide.alt}
     className="group/hero absolute inset-0 -z-20 overflow-hidden bg-ink"
-    onMouseEnter={() => setPaused(true)}
-    onMouseLeave={updateFocusPause}
-    onFocusCapture={() => setPaused(true)}
-    onBlurCapture={updateFocusPause}
   >
     {slides.map((slide, index) => <Image
       key={slide.image}
@@ -65,7 +70,7 @@ export function HeroBackgroundSlider({ slides, priority = false }: HeroBackgroun
       className={`hero-slider-image object-cover ${index === activeIndex ? "hero-slider-image-active" : ""}`}
     />)}
     <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,18,18,.98)_0%,rgba(18,18,18,.86)_47%,rgba(18,18,18,.2)_100%)]" aria-hidden="true" />
-    <div className="pointer-events-none absolute bottom-8 left-0 right-0 z-10" aria-label="Hero slide progress" aria-live="off">
+    <div data-hero-progress="true" className="pointer-events-none absolute bottom-8 left-0 right-0 z-10" aria-hidden="true">
       <div className="page-shell flex items-center gap-4 text-xs font-semibold tracking-[.18em] text-paper/75">
         <span>{String(activeIndex + 1).padStart(2, "0")}</span>
         <span className="relative h-px w-20 overflow-hidden bg-paper/30"><span key={activeIndex} className={`hero-slider-progress ${canCycle ? "hero-slider-progress-active" : ""}`} /></span>

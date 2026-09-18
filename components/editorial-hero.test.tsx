@@ -19,7 +19,7 @@ test("editorial hero keeps its content above the automatic slide backdrop", () =
   />);
 
   assert.match(html, /data-hero-slider="automatic"/);
-  assert.match(html, /aria-label="Hero slide progress"/);
+  assert.match(html, /data-hero-progress="true"/);
   assert.match(html, /Example title/);
   assert.match(html, /Book consultation/);
 });

@@ -8,7 +8,7 @@ test("service detail hero uses the shared automatic slider", async () => {
   const html = renderToStaticMarkup(page);
 
   assert.match(html, /data-hero-slider="automatic"/);
-  assert.match(html, /aria-label="Hero slide progress"/);
+  assert.match(html, /data-hero-progress="true"/);
   assert.match(html, /All services/);
   assert.match(html, /Corporate Law/);
 });

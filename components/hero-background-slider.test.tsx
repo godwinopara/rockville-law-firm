@@ -13,7 +13,7 @@ test("hero background slider renders its automatic three-slide structure", () =>
   const html = renderToStaticMarkup(<HeroBackgroundSlider slides={slides} />);
 
   assert.match(html, /data-hero-slider="automatic"/);
-  assert.match(html, /aria-label="Hero slide progress"/);
+  assert.match(html, /data-hero-progress="true"/);
   assert.match(html, /01/);
   assert.match(html, /03/);
   assert.match(html, /lagos-office\.jpg/);
