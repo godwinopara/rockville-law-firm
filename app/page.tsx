@@ -10,7 +10,7 @@ import { ValuesSection } from "@/components/values-section";
 
 export default function Home() {
   return <>
-    <div data-home-section="hero"><EditorialHero eyebrow="Commercially grounded legal counsel" title="Clarity for the matters that move you forward." description="A focused legal practice for businesses, institutions, and individuals navigating decisions that demand sound judgment." image="/images/lagos-office.jpg" imageAlt="Contemporary architectural interior" primaryLabel="Book consultation" secondaryLabel="Explore our services" /></div>
+    <div data-home-section="hero"><EditorialHero eyebrow="Commercially grounded legal counsel" title="Clarity for the matters that move you forward." description="A focused legal practice for businesses, institutions, and individuals navigating decisions that demand sound judgment." image="/images/lagos-office.jpg" imageAlt="Contemporary architectural interior" slides={[{ image: "/images/lagos-office.jpg", alt: "Contemporary architectural interior" }, { image: "/images/firm/reception.jpg", alt: "Rockville LP reception area" }, { image: "/images/firm/conference-library.jpg", alt: "Rockville LP conference room and legal library" }]} primaryLabel="Book consultation" secondaryLabel="Explore our services" /></div>
 
     <div data-home-section="about"><HomeAboutSection /></div>
 

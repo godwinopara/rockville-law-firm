@@ -7,7 +7,7 @@ export const metadata = { title: "Our Team" };
 
 export default function Team() {
   return <>
-    <EditorialHero eyebrow="Our team" title="Experienced counsel, united by one standard." description="Rockville LP brings together legal professionals who approach each mandate with care, discipline, and a clear understanding of what is at stake." image="/images/lagos-office.jpg" imageAlt="Rockville LP office architecture" primaryLabel="Book consultation" secondaryLabel="Explore services" />
+    <EditorialHero eyebrow="Our team" title="Experienced counsel, united by one standard." description="Rockville LP brings together legal professionals who approach each mandate with care, discipline, and a clear understanding of what is at stake." image="/images/lagos-office.jpg" imageAlt="Rockville LP office architecture" slides={[{ image: "/images/lagos-office.jpg", alt: "Rockville LP office architecture" }, { image: "/images/rufus-okoli.jpg", alt: "Rufus C. Okoli, Founder and Principal Partner" }, { image: "/images/firm/conference-library.jpg", alt: "Rockville LP conference room and legal library" }]} primaryLabel="Book consultation" secondaryLabel="Explore services" />
     <TeamProfiles />
     <ConsultationBanner />
     <div data-team-section="faq"><FaqSection /></div>

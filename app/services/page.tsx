@@ -11,7 +11,7 @@ export const metadata = { title: "Services" };
 
 export default function Services() {
   return <>
-    <EditorialHero eyebrow="Practice areas" title="Focused counsel. Practical perspective." description="From business formation and compliance to property, intellectual assets, and disputes, we bring structure and clarity to complex legal work." image="/images/lagos-tower.jpg" imageAlt="High-rise architectural detail" primaryLabel="Book consultation" />
+    <EditorialHero eyebrow="Practice areas" title="Focused counsel. Practical perspective." description="From business formation and compliance to property, intellectual assets, and disputes, we bring structure and clarity to complex legal work." image="/images/lagos-tower.jpg" imageAlt="High-rise architectural detail" slides={[{ image: "/images/lagos-tower.jpg", alt: "High-rise architectural detail" }, { image: "/images/firm/library-meeting-room.jpg", alt: "Rockville LP meeting room and legal library" }, { image: "/images/firm/legal-library-detail.jpg", alt: "Rockville LP legal library detail" }]} primaryLabel="Book consultation" />
 
     <section className="bg-paper"><div className="page-shell section-space">
       <MotionReveal className="grid gap-10 lg:grid-cols-[1.2fr_.8fr] lg:gap-20"><div><p className="eyebrow brand-rule text-stone">Confidence, resilience, and strategic precision</p><h2 className="display mt-8 max-w-4xl text-5xl leading-[.98] md:text-7xl">We are driven by a clear purpose to protect rights and pursue fair outcomes.</h2></div><p className="max-w-md self-end leading-7 text-stone">We bring careful analysis, direct communication, and determined representation to the legal matters entrusted to us.</p></MotionReveal>
