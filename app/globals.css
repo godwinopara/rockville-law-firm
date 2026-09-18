@@ -67,6 +67,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @keyframes hero-slider-progress { from { transform: translateX(-100%); } to { transform: translateX(0); } }
 :focus-visible { outline: 2px solid var(--brand-blue); outline-offset: 4px; }
 .bg-ink :focus-visible { outline-color: var(--brand-blue-light); }
+.contact-form-field:focus { border-color: var(--line); outline: none; }
+.contact-form-field:focus-visible { background-color: var(--panel); }
 
 @media (min-width: 768px) { .page-shell { width: min(100% - 5rem, 90rem); } }
 @media (prefers-reduced-motion: reduce) {
