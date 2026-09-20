@@ -12,3 +12,9 @@ test("header identifies Rockville with the supplied firm logo", () => {
   assert.doesNotMatch(html, /bg-paper px-3 py-2/);
   assert.doesNotMatch(html, />ROCKVILLE</);
 });
+
+test("header gives navigation links the underline treatment", () => {
+  const html = renderToStaticMarkup(<SiteHeader />);
+
+  assert.match(html, /class="nav-link[^"]*"/);
+});

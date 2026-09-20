@@ -40,6 +40,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand-rule { display: flex; align-items: center; gap: .8rem; }
 .brand-rule::before { width: 2.4rem; height: 1px; background: var(--brand-blue); content: ""; }
 .bg-ink .brand-rule::before { background: var(--brand-blue-light); }
+.nav-link { position: relative; display: inline-flex; padding-block: .55rem; transition: color .25s ease; }
+.nav-link::after { position: absolute; right: 0; bottom: 0; left: 0; height: 1px; transform: scaleX(0); transform-origin: left; background: var(--brand-blue); content: ""; transition: transform .3s cubic-bezier(.22, .61, .36, 1); }
+.nav-link:hover, .nav-link:focus-visible, .nav-link-active { color: var(--brand-blue); }
+.nav-link:hover::after, .nav-link:focus-visible::after, .nav-link-active::after { transform: scaleX(1); }
 .btn-primary, .btn-outline { display: inline-flex; min-height: 3.35rem; align-items: center; justify-content: center; gap: 1.4rem; padding: .85rem 1.25rem; font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; transition: background-color .3s ease, color .3s ease, border-color .3s ease; }
 .btn-primary { background: var(--brand-blue); color: var(--paper); }
 .btn-primary:hover { background: #3d557b; }
