@@ -8,6 +8,8 @@ test("footer uses the approved three-panel firm, navigation, and contact layout"
 
   assert.match(html, /data-footer-layout="three-panel"/);
   assert.match(html, /images%2Flogo\.png/);
+  assert.match(html, /bg-brand-surface/);
+  assert.doesNotMatch(html, /bg-paper px-5 py-4/);
   assert.match(html, /Footer navigation/);
   assert.match(html, /77, AWOLOWO RD, IKOYI, LAGOS STATE/);
   assert.match(html, /info@rockvillelp\.com/);

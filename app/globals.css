@@ -5,6 +5,7 @@
   --ink: #121212;
   --brand-blue: #2b3f61;
   --brand-blue-light: #7ea6c4;
+  --brand-surface: #e7eff5;
   --stone: #706f68;
   --line: #deddd7;
   --panel: #f0efea;
@@ -15,6 +16,7 @@
   --color-ink: var(--ink);
   --color-brand-blue: var(--brand-blue);
   --color-brand-blue-light: var(--brand-blue-light);
+  --color-brand-surface: var(--brand-surface);
   --color-stone: var(--stone);
   --color-line: var(--line);
   --color-panel: var(--panel);

@@ -8,5 +8,7 @@ test("header identifies Rockville with the supplied firm logo", () => {
 
   assert.match(html, /images%2Flogo\.png/);
   assert.match(html, /alt="Rockville Legal Practitioners"/);
+  assert.match(html, /bg-brand-surface/);
+  assert.doesNotMatch(html, /bg-paper px-3 py-2/);
   assert.doesNotMatch(html, />ROCKVILLE</);
 });
